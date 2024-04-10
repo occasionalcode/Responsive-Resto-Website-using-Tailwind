@@ -1,0 +1,41 @@
+npm init -y
+
+npm install -D tailwindcss
+npx tailwindcss init
+
+// Open the 'tailwind.config.js' file you just created and edit 'content' so that the file reads:
+
+module.exports = {
+  content: [
+    './public/**/*.{html,js}',
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+
+
+//make a public and src folder and put styles.css in both
+//delete the initial script as instructed, but add the following script instead:
+
+"build-css":"tailwindcss build src/style.css -o public/style.css",
+"watch":"tailwindcss build src/style.css -o public/style.css --watch"
+
+//put this at the src/styles.css 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+//run this code
+
+npm run build-css // run this code everytime there are changes in src/styles.css
+npm run watch // to not always run "run build-css" all the time
+
+npx tailwindcss -i ./src/styles.css -o ./public/styles.css --watch
+
+
+//if there is an error like this "Unknown at rule @tailwind"
+
+press "ctrl + shift +p" and search "Change language mode" and set it to "tailwindcss"
+
