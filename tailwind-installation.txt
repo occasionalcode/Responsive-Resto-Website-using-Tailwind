@@ -19,8 +19,9 @@ module.exports = {
 //make a public and src folder and put styles.css in both
 //delete the initial script as instructed, but add the following script instead:
 
-"build-css":"tailwindcss build src/style.css -o public/style.css",
-"watch":"tailwindcss build src/style.css -o public/style.css --watch"
+"build-css": "npx tailwindcss -i src/styles.css -o public/styles.css",
+"watch":"tailwindcss build src/styles.css -i public/styles.css --watch"
+
 
 //put this at the src/styles.css 
 @tailwind base;
